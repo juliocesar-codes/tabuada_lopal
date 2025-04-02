@@ -1,8 +1,8 @@
-package br.dev.gustavo_pereira.calculadora_tabuada.ui;
+package br.dev.julio_cesar.calculadora_tabuada.ui;
 
 import java.util.Scanner;
 
-import br.dev.gustavo_pereira.calculadora_tabuada.model.Tabuada;
+import br.dev.julio_cesar.calculadora_tabuada.model.Tabuada;
 
 public class Menu {
 	

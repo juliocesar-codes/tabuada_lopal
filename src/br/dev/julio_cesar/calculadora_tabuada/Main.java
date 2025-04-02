@@ -1,6 +1,6 @@
-package br.dev.gustavo_pereira.calculadora_tabuada;
+package br.dev.julio_cesar.calculadora_tabuada;
 
-import br.dev.gustavo_pereira.calculadora_tabuada.ui.Menu;
+import br.dev.julio_cesar.calculadora_tabuada.ui.Menu;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package br.dev.gustavo_pereira.calculadora_tabuada.model;
+package br.dev.julio_cesar.calculadora_tabuada.model;
 
 public class Tabuada {
 
