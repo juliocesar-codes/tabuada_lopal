@@ -32,7 +32,7 @@ public class Tabuada {
 	
 	
 	public void mostrarTabuada() {
-		while (minimoMultiplicador < maximoMultiplicador +1) {
+		while (minimoMultiplicador <= maximoMultiplicador ) {
 			double tabuada = multiplicando * minimoMultiplicador;
 			System.out.println(multiplicando + " X " + minimoMultiplicador + " = " + tabuada);
 			minimoMultiplicador = minimoMultiplicador +1;
