@@ -37,8 +37,6 @@ public class Tabuada {
 			System.out.println(multiplicando + " X " + minimoMultiplicador + " = " + tabuada);
 			minimoMultiplicador = minimoMultiplicador +1;
 		}
-		
-		
 	}
 	
 }

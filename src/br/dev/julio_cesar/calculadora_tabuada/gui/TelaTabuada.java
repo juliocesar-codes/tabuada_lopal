@@ -1,6 +1,12 @@
 package br.dev.julio_cesar.calculadora_tabuada.gui;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import br.dev.julio_cesar.calculadora_tabuada.model.Tabuada;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -34,6 +40,7 @@ public class TelaTabuada {
 		tela.setSize(400, 700);
 		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		tela.setLayout(null);
+		tela.setResizable(false);
 		
 		//Vamos criar os componentes da tela
 		labelMultiplicando = new JLabel();
@@ -68,6 +75,11 @@ public class TelaTabuada {
 		buttonLimpar.setText("Limpar");
 		buttonLimpar.setBounds(220, 150, 130, 40);
 		
+		// Criar o objeto scroll
+		
+		scrollTabuada = new JScrollPane(listTabuada);
+		scrollTabuada.setBounds(20, 205, 330, 350);
+		
 		// Obtemos o painel de conteúdo e adicionamos o labelMultiplicando nesse painel
 		tela.getContentPane().add(labelMultiplicando);
 		tela.getContentPane().add(labelMinMultiplicador);
@@ -79,7 +91,43 @@ public class TelaTabuada {
 		tela.getContentPane().add(buttonLimpar);
 		tela.getContentPane().add(scrollTabuada);
 		
+		// Adicionar ouvintes de eventos aos botões
 		
+		buttonCalcular.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				Tabuada tabuada = new Tabuada();
+				String multiplicando = textMultiplicando.getText();
+				double multiplicandoDouble = Double.valueOf(multiplicando);
+				tabuada.setMultiplicando(multiplicandoDouble);
+				
+				String min = textMinMultiplicador.getText();
+				double minDouble = Double.valueOf(min);
+				tabuada.setMinimoMultiplicador(minDouble);
+				
+				String max = textMaxMultiplicador.getText();
+				double maxDouble = Double.valueOf(max);
+				tabuada.setMaximoMultiplicador(maxDouble);
+				
+				tabuada.mostrarTabuada();
+			
+			}
+		});
+		
+		buttonLimpar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				textMultiplicando.setText("");
+				textMinMultiplicador.setText("");
+				textMaxMultiplicador.setText("");
+				textMultiplicando.requestFocus();
+			}
+		});
 		
 		// Essa linha deve ser a última linha desse método
 		tela.setVisible(true);
